@@ -1,3 +1,5 @@
+#requires at least xampp and firefox to run, see firefox config in screenshot.php
+
 webpage content:
 -header / nav
 -Introductie persoon
