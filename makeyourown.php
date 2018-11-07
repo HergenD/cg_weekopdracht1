@@ -1,5 +1,5 @@
 <div class="blok">
-<div class="content">
+<div class="content" id="portContent">
 <h1>Enter page url:</h1>
 <form id="myForm">
 <input type="text">
