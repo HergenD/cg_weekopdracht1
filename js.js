@@ -7,6 +7,12 @@ function loadPage(page) {
             setTimeout(function() {
                 document.getElementById("container").innerHTML = y;
                 document.getElementById("container").style.opacity = "1";
+				if (location.hash === "#mijnportfolio" || location.hash === "#makeyourown") {
+					resSite();
+				}
+				if (location.hash === "#home" || location.hash === "" || location.hash === "index") {
+					cInit()
+				}
             }, 400);
         }
         if (this.status == 404) {
@@ -32,7 +38,7 @@ function pageSelect() {
     }
 }
 
-var img = "asd";
+var img = "default";
 var siteTitle = "http://google.com";
 var titleCont = "default";
 
@@ -49,11 +55,43 @@ function getPageTitle(page) {
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send("input="+purl);
 }
-var scrollBar = 0;
 
-function addNewSite(){
-	
-	
+function cInit() {
+	var consoleInput = document.getElementById("consoleInput");
+	consoleInput.addEventListener("keydown", function (e) {
+    if (e.keyCode === 13) {
+        cExec();
+    }
+	});
+}
+
+function cExec() {
+	var newLine = document.createElement("p");
+	var rawInput = document.getElementById('consoleInput').value.replace(/ /g,'')
+	var consoleInput = rawInput.split("-")
+	switch (consoleInput[0]) {
+	case 'help':
+		newLine.innerHTML = 'Available commands: "help", "author", "about", "test"'
+		break;	
+		case 'author':
+		newLine.innerHTML = 'Made by Hergen Dillema'
+		break;
+	case 'about':
+		newLine.innerHTML = 'Custom console-like interface, made using javascript, by Hergen Dillema for CodeGorilla'
+		break;
+	case 'test':
+		newLine.innerHTML = window.location
+		break;
+	default:
+		newLine.innerHTML = 'Command "'+consoleInput[0]+'" is not know, type "help" for a list of all commands. Options used: '+;
+	}
+	var wholeConsole = document.getElementById("console");
+	wholeConsole.insertBefore(newLine, document.getElementById('start'));
+	wholeConsole.scrollTop = wholeConsole.scrollHeight;
+	document.getElementById('consoleInput').value = "";
+}
+
+function addNewSite(){	
 	//Making divs and image
 	var newDiv = document.createElement("div");
 	newDiv.className="siteBlok";
@@ -108,8 +146,10 @@ function addNewSite(){
 }
 
 function resSite(){
+	console.log("resSite");
 	// variables
 	var containerW = document.getElementById('portContent').offsetWidth;
+	console.log(document.getElementById('portContent').offsetWidth);
 	var countSites = Math.floor(containerW / 270);
 	var divWidth = (containerW/countSites) - 11;
 	var divHeight = (divWidth/4)*3;
@@ -157,7 +197,10 @@ function execInit() {
 }
 
 function execRes() {
-	resSite();
+	if (location.hash === "#mijnportfolio" || location.hash === "#makeyourown") {
+			resSite();
+			console.log("mijn");
+	}
 }
 
 window.onhashchange = execInit;
