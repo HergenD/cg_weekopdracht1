@@ -49,33 +49,50 @@ function getPageTitle(page) {
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send("input="+purl);
 }
+var scrollBar = 0;
 
-function addNewSite(){	
+function addNewSite(){
+	
+	
 	//Making divs and image
 	var newDiv = document.createElement("div");
+	newDiv.className="siteBlok";
 	var newTitle = document.createElement("div");
+	newTitle.className="titleBlok";
 	var newImg = document.createElement("img");
+	newImg.className="imgBlok";
 	newTitle.innerHTML = "<h2>"+titleCont+"</h2>"
 	
 	//Div styling
 	newDiv.style.position="relative";
-	newDiv.style.width="260px";
-	newDiv.style.height="200px";
+
 	newDiv.style.float="left";
 	newDiv.style.margin="5px";
+	newDiv.style.cursor="pointer";
+	newDiv.onclick = function(){window.location.href=siteTitle };
 	
 	//Text styling
 	newTitle.style.position="absolute";
 	newTitle.style.bottom="0";
 	newTitle.style.zIndex="10";
-	newTitle.style.height="80px";
-	newTitle.style.width="260px";
 	newTitle.style.backgroundColor="rgba(0,0,0,0.6)";
+	newTitle.style.overflow="hidden";
+	
+	
+	//Resize options
+	var containerW = document.getElementById('portContent').offsetWidth;
+	var countSites = Math.floor(containerW / 270)
+	var divWidth = (containerW/countSites) - 10;
+	var divHeight = (divWidth/4)*3;
+	newDiv.style.width=divWidth+"px";
+	newDiv.style.height=divHeight+"px";
+	newTitle.style.height=(divHeight/2.5)+"px";
+	newTitle.style.width=divWidth+"px";
+	newImg.height=divHeight;
+	newImg.width=divWidth;
 	
 	//Image styling
 	newImg.src=img;
-	newImg.height="200";
-	newImg.width="260";
 	newImg.style.position="relative";
 	newImg.style.zIndex="1";
 	newImg.style.objectFit="cover";
@@ -83,10 +100,39 @@ function addNewSite(){
 	//Insert
 	newDiv.appendChild(newImg);  
 	newDiv.appendChild(newTitle);  
-	document.getElementById("projects").appendChild(newDiv);		
+	document.getElementById("projects").appendChild(newDiv);	
+	if (window.innerWidth > document.getElementById('container').offsetWidth){
+	resSite();
+	}	
 			
 }
-	
+
+function resSite(){
+	// variables
+	var containerW = document.getElementById('portContent').offsetWidth;
+	var countSites = Math.floor(containerW / 270);
+	var divWidth = (containerW/countSites) - 11;
+	var divHeight = (divWidth/4)*3;
+	//Resize siteBlok
+	var siteBlok = document.getElementsByClassName("siteBlok");
+	for(i = 0; i < siteBlok.length; i++){
+    siteBlok[i].style.width=divWidth+"px";
+    siteBlok[i].style.height=divHeight+"px";
+	}
+	//Resize titleBlok
+	var titleBlok = document.getElementsByClassName("titleBlok");
+	for(i = 0; i < titleBlok.length; i++){
+    titleBlok[i].style.height=(divHeight/2.5)+"px";
+    titleBlok[i].style.width=divWidth+"px";
+	}
+	//Resize imgBlok
+	var imgBlok = document.getElementsByClassName("imgBlok");
+	for(i = 0; i < imgBlok.length; i++){
+    imgBlok[i].height=divHeight;
+    imgBlok[i].width=divWidth;
+	}
+}
+
 function loadImg(a) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -111,6 +157,7 @@ function execInit() {
 }
 
 function execRes() {
+	resSite();
 }
 
 window.onhashchange = execInit;
