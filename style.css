@@ -9,7 +9,6 @@ body {
 	background-color:black;
 	background-repeat: no-repeat;
     background-position: center top;
-
 	background:#3498db;
 	background-size:cover;
 }
@@ -20,16 +19,16 @@ header {
 	width:100vw;
 	height:80px;
 	background-color:#3498db;
--webkit-box-shadow: 0px -2px 19px 4px rgba(0,0,0,0.75);
--moz-box-shadow: 0px -2px 19px 4px rgba(0,0,0,0.75);
-box-shadow: 0px -2px 19px 4px rgba(0,0,0,0.75);
-z-index:10;
+	-webkit-box-shadow: 0px -2px 19px 4px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px -2px 19px 4px rgba(0,0,0,0.75);
+	box-shadow: 0px -2px 19px 4px rgba(0,0,0,0.75);
+	z-index:10;
 }
 #hwrap, .content{
-width:100%;
-max-width:1100px;
-margin-left:auto;
-margin-right:auto;
+	width:100%;
+	max-width:1100px;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 
@@ -78,11 +77,8 @@ nav {
 	overflow-x:hidden;
 }
 
-
-
 a {
 	display:block;
-
 	color:#FFF;
 	font-size:18px;
 	text-align:center;
@@ -95,7 +91,7 @@ a {
 
 }
 nav a{
-		padding:28px;
+	padding:28px;
 	padding-top:30px;
 }
 footer a {
@@ -208,12 +204,11 @@ h2{
 	width:800px;
 	height:400px;
 	background-color:#383838;
-
 	padding:20px;
 	margin-top:50px;
 	margin-left:auto;
 	margin-right:auto;
-	    border: 2px solid #FFF;
+	border: 2px solid #FFF;
     border-radius: 5px;
 
 }
@@ -227,7 +222,7 @@ h2{
 }
 
 #console p {
-	width:550px;
+	width:750px;
 	color:#FFF;
 	font-size:14px;
 	font-family: 'Inconsolata', monospace;
@@ -237,17 +232,16 @@ h2{
 	margin-bottom:5px;
 }
 #console input {
-	width:550px;
+	width:750px;
 	color:#FFF;
-		font-size:14px;
+	font-size:14px;
 	font-family: 'Inconsolata', monospace;
 	background-color:#383838;
-	    border: 0px;
-			padding-left:5px;
-			margin-bottom:10px;
+	border: 0px;
+	padding-left:5px;
+	margin-bottom:10px;
 }
 #console input:focus {
     border:0;
 	outline-width: 0;
-
 }
