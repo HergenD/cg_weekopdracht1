@@ -1,4 +1,4 @@
-#requires at least xampp and firefox to run, see firefox config in screenshot.php
+#requires at least xampp and firefox to run locally, see firefox config in screenshot.php
 
 webpage content:
 -header / nav
