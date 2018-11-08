@@ -55,8 +55,22 @@ function getPageTitle(page) {
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.send("input=" + purl);
 }
+function showText (targo, message, index, interval) {    
+	if (index < message.length) { 
+	if(message[index]=="<"){
+		document.getElementById(targo).append(document.createElement('br'));
+		index ++;
+	} else { 
+	document.getElementById(targo).append(message[index++]); 
+	}
+    setTimeout(function () { showText(targo, message, index, interval); }, interval); 
+	} 
 
+}
+	
 function cInit() {
+	document.getElementById('consoleInput').focus(); 
+	showText("msg", ">>>> Welkom op portfoliowebsite.iets < >>>> Je kan hier mijn portfolio bekijken, of je eigen portfolio maken < >>>> Je kan de site ook navigeren en de meeste (+meer) functionaliteit gebruiken door middel van deze console, typ 'help' voor meer commands", 0, 25); 
     var consoleInput = document.getElementById("consoleInput");
     consoleInput.addEventListener("keydown", function(e) {
         if (e.keyCode === 13) {
@@ -67,12 +81,12 @@ function cInit() {
 
 function cExec() {
     var newLine = document.createElement("p");
-    var rawInput = document.getElementById('consoleInput').value.replace(/ /g, '')
-    var consoleInput = rawInput.split("-")
+    var rawInput = document.getElementById('consoleInput').value.replace(/ /g, '');
+    var consoleInput = rawInput.split("-");
 	var wholeConsole = document.getElementById("console");
     switch (consoleInput[0]) {
         case 'help':
-            newLine.innerHTML = 'Available commands: <font style="color:yellow;">help</font>, <font style="color:yellow;">author</font>, <font style="color:yellow;">about</font>, <font style="color:yellow;">test</font>, <font style="color:red;">clear</font>'
+            newLine.innerHTML = 'Available commands: <font style="color:yellow;">topage</font>, <font style="color:yellow;">author</font>, <font style="color:yellow;">about</font>, <font style="color:yellow;">test</font>, <font style="color:red;">reload</font>, <font style="color:red;">clear</font>'
             break;
         case 'author':
             newLine.innerHTML = 'Made by Hergen Dillema'
@@ -80,7 +94,39 @@ function cExec() {
         case 'about':
             newLine.innerHTML = 'Custom console-like interface, made using javascript, by Hergen Dillema for CodeGorilla'
             break;
-        case 'test':
+        case 'reload':
+			location.reload();
+			break;
+        case 'topage':
+			if (consoleInput.length === 1) {
+            newLine.innerHTML = 'Available pages: home, mijnportfolio, makeyourown, contact. Usage: topage -pagename'
+			}
+			else if(consoleInput[1] == 'home' || consoleInput[1] == 'mijnportfolio' || consoleInput[1] == 'makeyourown' || consoleInput[1] == 'contact') {
+				toPage(consoleInput[1]);
+			} else {
+				newLine.innerHTML = 'Unknown page: "'+consoleInput[1]+'". Available pages: home, mijnportfolio, makeyourown, contact.';
+			}
+            break;
+      case 'js':
+			if (consoleInput.length === 1) {
+            newLine.innerHTML = 'Usage: js -JAVASCRIPTHERE'
+			} else {
+				eval(consoleInput[1]);
+				newLine.innerHTML = 'Executed: "'+consoleInput[1]+'". Use this at your own risk';
+			}
+            break;
+        case 'style':
+			if (consoleInput.length === 1) {
+			newLine.innerHTML = 'Usage: style -"default"/"off"'
+			} else if (consoleInput[1] == "off") {
+            document.getElementById("pagestyle").setAttribute("href", ""); 
+			} else if (consoleInput[1] == "default") {
+            document.getElementById("pagestyle").setAttribute("href", "style.css"); 
+			} else {
+			newLine.innerHTML = 'Style "'+consoleInput[1]+'" unknown. Currently supported: off/default';
+			}
+            break;
+       case 'test':
             newLine.innerHTML = window.location
             break;
         case 'clear':
@@ -98,6 +144,17 @@ function cExec() {
     wholeConsole.insertBefore(newLine, document.getElementById('start'));
     wholeConsole.scrollTop = wholeConsole.scrollHeight;
     document.getElementById('consoleInput').value = "";
+}
+
+function mobileShow() {
+	document.getElementById('nav').style.height="240px";
+	document.getElementById('show').style.display="none";
+	document.getElementById('hide').style.display="block";
+}
+function mobileHide() {
+	document.getElementById('nav').style.height="0px";
+	document.getElementById('hide').style.display="none";
+	document.getElementById('show').style.display="block";
 }
 
 function addNewSite() {

@@ -9,7 +9,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css?family=PT+Sans:700|Roboto:500" rel="stylesheet">
 	  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="style.css">
+      <link id="pagestyle" rel="stylesheet" type="text/css" href="style.css">
+	  <link rel="stylesheet" href="icons.css"></head>
       <link rel="icon" href="/favicon.ico" type="image/x-icon">
    </head>
    <body id="body" style="">
@@ -17,7 +18,9 @@
          <header>
 		 <div id="hwrap">
             <div id="logo"></div>
-            <nav>
+			<div id="show" class="hamburger" onclick="mobileShow()"><div class="lines"></div><div class="lines"></div><div class="lines"></div></div>
+			<div id="hide" class="hamburger" onclick="mobileHide()"><div class="lines"></div><div class="lines"></div><div class="lines"></div></div>
+            <nav id="nav">
                <ul>
                   <li><a href="#home">Home</a></li>
                   <li><a href="#mijnportfolio">Mijn portfolio</a></li>
