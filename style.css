@@ -248,7 +248,7 @@ h2{
 	bottom:0px;
 	right:20px;
 	z-index:100;
-	cursor:pointer;
+	cursor:default;
 	opacity:0;
 	transition: opacity 0.4s ease-in-out;
    -moz-transition: opacity 0.4s ease-in-out;

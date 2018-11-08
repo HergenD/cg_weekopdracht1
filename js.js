@@ -16,7 +16,10 @@ function loadPage(page) {
 				}
                 if (initC === 0) {
                     cInit()
-                } else {
+                } 
+				else if(location.hash == "#makeyourown" || location.hash == "" || location.hash == "#home") {
+					showConsole()
+				} else {
 					hideConsole();
 				}
             }, 400);
@@ -179,12 +182,14 @@ function showConsole () {
 	document.getElementById('consoleBox').style.marginTop="50px";
 	document.getElementById('bgImg').style.height="404px";
 	document.getElementById('showConsole').style.opacity="0";
+	document.getElementById('showConsole').style.cursor="default";
 		
 }
 function hideConsole () {
 	document.getElementById('consoleBox').style.marginTop="-250px";
 	document.getElementById('bgImg').style.height="30px";
-	document.getElementById('showConsole').style.opacity="1";		
+	document.getElementById('showConsole').style.opacity="1";	
+	document.getElementById('showConsole').style.cursor="pointer";	
 }
 
 function addNewSite() {
