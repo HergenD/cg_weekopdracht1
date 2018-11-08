@@ -1,3 +1,4 @@
+var initC = 0;
 function loadPage(page) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -10,9 +11,14 @@ function loadPage(page) {
                 if (location.hash === "#mijnportfolio" || location.hash === "#makeyourown") {
                     resSite();
                 }
-                if (location.hash === "#home" || location.hash === "" || location.hash === "index") {
+				if (window.innerWidth<=800) {
+					mobileHide()
+				}
+                if (initC === 0) {
                     cInit()
-                }
+                } else {
+					hideConsole();
+				}
             }, 400);
         }
         if (this.status == 404) {
@@ -69,6 +75,7 @@ function showText (targo, message, index, interval) {
 }
 	
 function cInit() {
+	initC = 1;
 	document.getElementById('consoleInput').focus(); 
 	showText("msg", ">>>> Welkom op portfoliowebsite.iets < >>>> Je kan hier mijn portfolio bekijken, of je eigen portfolio maken < >>>> Je kan de site ook navigeren en de meeste (+meer) functionaliteit gebruiken door middel van deze console, typ 'help' voor meer commands", 0, 25); 
     var consoleInput = document.getElementById("consoleInput");
@@ -114,6 +121,17 @@ function cExec() {
 				eval(consoleInput[1]);
 				newLine.innerHTML = 'Executed: "'+consoleInput[1]+'". Use this at your own risk';
 			}
+            break;     
+			case 'addsite':
+			if(location.hash == "#makeyourown"){
+				if (consoleInput.length === 1) {
+					newLine.innerHTML = 'Usage: addsite -http://SITENAME.com'
+				} else {
+					sendIt(consoleInput[1]);
+				} 
+			} else {
+				newLine.innerHTML = "Can't add custom websites to this page, please use 'topage' to switch to page 'makeyourown'.";
+			}
             break;
         case 'style':
 			if (consoleInput.length === 1) {
@@ -155,6 +173,18 @@ function mobileHide() {
 	document.getElementById('nav').style.height="0px";
 	document.getElementById('hide').style.display="none";
 	document.getElementById('show').style.display="block";
+}
+
+function showConsole () {
+	document.getElementById('consoleBox').style.marginTop="50px";
+	document.getElementById('bgImg').style.height="404px";
+	document.getElementById('showConsole').style.opacity="0";
+		
+}
+function hideConsole () {
+	document.getElementById('consoleBox').style.marginTop="-250px";
+	document.getElementById('bgImg').style.height="30px";
+	document.getElementById('showConsole').style.opacity="1";		
 }
 
 function addNewSite() {
@@ -214,10 +244,8 @@ function addNewSite() {
 }
 
 function resSite() {
-    console.log("resSite");
     // variables
     var containerW = document.getElementById('portContent').offsetWidth;
-    console.log(document.getElementById('portContent').offsetWidth);
     var countSites = Math.floor(containerW / 270);
     var divWidth = (containerW / countSites) - 11;
     var divHeight = (divWidth / 4) * 3;
@@ -254,9 +282,9 @@ function loadImg(a) {
     xhr.send(a);
 }
 
-function sendIt() {
-    siteTitle = document.getElementById("myForm").elements[0].value;
-    var y = "input=" + siteTitle;
+function sendIt(a) {
+    siteTitle = a;
+    var y = "input=" + a;
     loadImg(y);
 
 }
@@ -268,7 +296,6 @@ function execInit() {
 function execRes() {
     if (location.hash === "#mijnportfolio" || location.hash === "#makeyourown") {
         resSite();
-        console.log("mijn");
     }
 }
 

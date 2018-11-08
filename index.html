@@ -8,18 +8,27 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css?family=PT+Sans:700|Roboto:500" rel="stylesheet">
-	  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
       <link id="pagestyle" rel="stylesheet" type="text/css" href="style.css">
-	  <link rel="stylesheet" href="icons.css"></head>
-      <link rel="icon" href="/favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" href="icons.css">
+   </head>
+   <link rel="icon" href="/favicon.ico" type="image/x-icon">
    </head>
    <body id="body" style="">
       <div id="bg">
-         <header>
-		 <div id="hwrap">
+      <header>
+         <div id="hwrap">
             <div id="logo"></div>
-			<div id="show" class="hamburger" onclick="mobileShow()"><div class="lines"></div><div class="lines"></div><div class="lines"></div></div>
-			<div id="hide" class="hamburger" onclick="mobileHide()"><div class="lines"></div><div class="lines"></div><div class="lines"></div></div>
+            <div id="show" class="hamburger" onclick="mobileShow()">
+               <div class="lines"></div>
+               <div class="lines"></div>
+               <div class="lines"></div>
+            </div>
+            <div id="hide" class="hamburger" onclick="mobileHide()">
+               <div class="lines"></div>
+               <div class="lines"></div>
+               <div class="lines"></div>
+            </div>
             <nav id="nav">
                <ul>
                   <li><a href="#home">Home</a></li>
@@ -28,8 +37,30 @@
                   <li><a href="#contact">Neem contact op</a></li>
                </ul>
             </nav>
-			</div>
-         </header>
+         </div>
+      </header>
+      <div id="bgImg" class="blok bgImg">
+         <div class="content" style="overflow:auto;">
+            <div id="consoleBox" onclick="document.getElementById('consoleInput').focus(); return false;">
+               <div id="console">
+                  <p id="msg"></p>
+                  <span id="start">></span><input id="consoleInput" type="text" autofocus></input>
+               </div>
+			     <div id="showConsole" onclick="showConsole()"></div>
+            </div>
+            <div style="width:100%;height:50px;margin:0;padding:0;">
+            </div>
+         </div>
+      </div>
+      <div class="blok">
+         <div class="content" style="overflow:visible;margin-top:-30px;">
+            <div class="iconCont">
+               <i class="bitIcon-html5 iconHome"></i>
+               <i class="bitIcon-js iconHome"></i>
+               <i class="bitIcon-css3 iconHome"></i>
+               <i class="bitIcon-php iconHome"></i>
+            </div>
+         </div>
          <div id="container">
             <!-- PAGE CONTENT LOADED HERE -->
          </div>
