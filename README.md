@@ -1,3 +1,7 @@
+LIVE PREVIEW https://n-esty.github.io/cg_weekopdracht1/index.html
+
+NOTE: Adding new sites to make your own portfolio is not supported in the live preview but code exists
+
 webpage content:
 -header / nav
 -Introductie persoon
