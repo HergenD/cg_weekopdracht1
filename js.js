@@ -119,13 +119,16 @@ function cExec() {
 	var wholeConsole = document.getElementById("console");
 	switch (consoleInput[0]) {
 		case 'help':
-			newLine.innerHTML = 'Available commands: <font style="color:yellow;">topage</font>, <font style="color:yellow;">nightmode</font>, <font style="color:yellow;">author</font>, <font style="color:yellow;">about</font>, <font style="color:yellow;">test</font>, <font style="color:red;">reload</font>, <font style="color:red;">clear</font>'
+			newLine.innerHTML = 'Available commands: <font style="color:yellow;">topage</font>, <font style="color:yellow;">nightmode</font>, <font style="color:yellow;">author</font>, <font style="color:yellow;">about</font>, <font style="color:yellow;">test</font>, <font style="color:red;">reload</font>, <font style="color:red;">clear</font>, <font style="color:red;">history</font>'
 			break;
 		case 'author':
 			newLine.innerHTML = 'Made by Hergen Dillema'
 			break;
 		case 'about':
 			newLine.innerHTML = 'Custom console-like interface, made using javascript, by Hergen Dillema for CodeGorilla'
+			break;
+		case 'history':
+			newLine.innerHTML = cHistory;
 			break;
 		case 'reload':
 			location.reload();
