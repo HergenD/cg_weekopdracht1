@@ -4,6 +4,8 @@ var night = 0;
 var img = "default";
 var siteTitle = "http://google.com";
 var titleCont = "default";
+var cHistory = [];
+var chPos = -1;
 
 //
 // Functions for loading pages
@@ -78,7 +80,7 @@ function showText(targo, message, index, interval) {
 	}
 }
 
-// initial loading of console, listening for enter key presses and displaying initial test using showText()
+// initial loading of console, listening for keyboard presses and displaying initial test using showText()
 function cInit() {
 	initC = 1;
 	showText("msg", ">>>> Welkom op portfoliowebsite.iets < >>>> Je kan hier mijn portfolio bekijken, of je eigen portfolio maken < >>>> Je kan de site ook navigeren en de meeste (+meer) functionaliteit gebruiken door middel van deze console, typ 'help' voor meer commands", 0, 25);
@@ -86,6 +88,22 @@ function cInit() {
 	consoleInput.addEventListener("keydown", function(e) {
 		if (e.keyCode === 13) {
 			cExec();
+			chPos = cHistory.length - 1;
+		}
+		if (e.keyCode === 38) {
+			if (chPos >= 0) {
+				document.getElementById('consoleInput').value = cHistory[chPos];
+				chPos--;
+			}
+		}
+		if (e.keyCode === 40) {
+			if (chPos < (cHistory.length -2)) {
+				chPos++;
+				document.getElementById('consoleInput').value = cHistory[chPos+1];
+			} else if(chPos == (cHistory.length - 2)) {
+				chPos++;
+				document.getElementById('consoleInput').value = "";
+			}
 		}
 	});
 	document.getElementById('consoleInput').focus();
@@ -94,6 +112,8 @@ function cInit() {
 // all console functionality, getting input and displaying feedback
 function cExec() {
 	var newLine = document.createElement("p");
+	var historyPos = cHistory.length;
+	cHistory[historyPos] = document.getElementById('consoleInput').value;
 	var rawInput = document.getElementById('consoleInput').value.replace(/ /g, '');
 	var consoleInput = rawInput.split("-");
 	var wholeConsole = document.getElementById("console");
