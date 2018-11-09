@@ -167,6 +167,17 @@ function cExec() {
     document.getElementById('consoleInput').value = "";
 }
 
+var night = 0;
+function nightMode() {
+	if (night === 0) {
+		document.getElementById("nightmode").setAttribute("href", "nightmode.css"); 
+		night = 1;
+	} else {
+		document.getElementById("nightmode").setAttribute("href", ""); 
+		night = 0;
+	}
+}
+
 function mobileShow() {
 	document.getElementById('nav').style.height="240px";
 	document.getElementById('show').style.display="none";

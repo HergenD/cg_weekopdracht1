@@ -1,0 +1,72 @@
+body {
+
+	background-color:#303C40;
+
+}
+header {
+
+	background-color:#27363B;
+
+}
+
+
+
+footer {
+
+	background-color:#27363B;
+
+}
+
+
+
+
+a {
+
+	color:#FFF;
+
+}
+
+
+h1{
+	color:#FFF;
+
+}
+
+.content p, .content ul, .homeBlock ul{
+	color:#FFF;
+
+}
+.homeBlock {
+	background-color:#303C40;
+}
+.homeBlock p{
+	color:#FFF;
+
+}
+
+@media only screen and (max-width: 800px)  {
+	.lines {
+
+		background-color: white;
+
+	}
+
+nav a:hover{
+	background-color:rgba(255,255,255,0.1);
+}
+
+
+nav ul{
+
+	background-color:rgba(0,0,0,0.85);
+
+}	
+	
+}
+@media only screen and (min-width: 800px)  {
+
+
+nav a:hover{
+	background-color:rgba(255,255,255,0.1);
+}	
+}
