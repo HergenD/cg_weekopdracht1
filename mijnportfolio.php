@@ -19,55 +19,43 @@
 	  <li>Linux (Debian)</li>
 	  </ul>
 </div>
-	<div id="portContent" style="width=100%;max-width:1200px;margin-left:auto;margin-right:auto;">
+	<div id="portContent" class="center">
 		<div id="projects">
 			<!-- GRID -->
 			<div class="siteBlok">
-				<img class="imgBlok" src="img/example.jpg" />
+				<img class="imgBlok" src="img/wed.jpg" />
 				<div class="titleBlok">
-				<h2>Example site</h2>
+				<h2>Website Edzer Dillema</h2>
 				</div>
 			</div>
 			<div class="siteBlok">
-				<img class="imgBlok" src="img/example.jpg" />
+				<img class="imgBlok" src="img/wdfa.jpg" />
 				<div class="titleBlok">
-				<h2>Example site</h2>
+				<h2>Website DFA</h2>
 				</div>
 			</div>
 			<div class="siteBlok">
-				<img class="imgBlok" src="img/example.jpg" />
+				<img class="imgBlok" src="img/wth.jpg" />
 				<div class="titleBlok">
-				<h2>Example site</h2>
+				<h2>Website Truus Huijbregts</h2>
 				</div>
 			</div>
 			<div class="siteBlok">
-				<img class="imgBlok" src="img/example.jpg" />
+				<img class="imgBlok" src="img/wkah.jpg" />
 				<div class="titleBlok">
-				<h2>Example site</h2>
+				<h2>Website Klassiek aan huis</h2>
 				</div>
 			</div>
 			<div class="siteBlok">
-				<img class="imgBlok" src="img/example.jpg" />
+				<img class="imgBlok" src="img/htc.jpg" />
 				<div class="titleBlok">
-				<h2>Example site</h2>
+				<h2>HTML/CSS Templates Cedeo</h2>
 				</div>
 			</div>
 			<div class="siteBlok">
-				<img class="imgBlok" src="img/example.jpg" />
+				<img class="imgBlok" src="img/wtvhl.jpg" />
 				<div class="titleBlok">
-				<h2>Example site</h2>
-				</div>
-			</div>
-			<div class="siteBlok">
-				<img class="imgBlok" src="img/example.jpg" />
-				<div class="titleBlok">
-				<h2>Example site</h2>
-				</div>
-			</div>
-			<div class="siteBlok">
-				<img class="imgBlok" src="img/example.jpg" />
-				<div class="titleBlok">
-				<h2>Example site</h2>
+				<h2>Website TVHL</h2>
 				</div>
 			</div>
 			<!-- GRID END -->

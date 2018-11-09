@@ -222,7 +222,7 @@ function addNewSite() {
 
     //Resize options
     var containerW = document.getElementById('portContent').offsetWidth;
-    var countSites = Math.floor(containerW / 270)
+    var countSites = Math.floor(containerW / 240)
     var divWidth = (containerW / countSites) - 10;
     var divHeight = (divWidth / 4) * 3;
     newDiv.style.width = divWidth + "px";
@@ -251,7 +251,7 @@ function addNewSite() {
 function resSite() {
     // variables
     var containerW = document.getElementById('portContent').offsetWidth;
-    var countSites = Math.floor(containerW / 270);
+    var countSites = Math.floor(containerW / 240);
     var divWidth = (containerW / countSites) - 11;
     var divHeight = (divWidth / 4) * 3;
     //Resize siteBlok
