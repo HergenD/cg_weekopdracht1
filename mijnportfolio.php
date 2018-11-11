@@ -8,7 +8,7 @@
 
 Etiam interdum sollicitudin dolor, et interdum tortor tempor tincidunt. Sed tincidunt commodo leo, vel blandit augue pharetra ac. Suspendisse ac augue fermentum, aliquet orci id, sollicitudin erat. Donec volutpat commodo semper. Sed luctus neque id elit tristique tempor. Cras velit elit, ultricies a dictum sed, placerat ornare est. In et varius mauris. Mauris sapien dolor, consequat vitae purus ut, tempor blandit nisi. Suspendisse et est lacus. Phasellus aliquet quis neque vitae malesuada. Mauris et pharetra mauris, ac efficitur nisi. </p>
 
-
+<div style="padding:0;margin:0;width:50%;float:left;">
       <h1>Wat kan ik?</h1>
 	  <ul>
 	  <li>Adobe Photoshop</li>
@@ -16,11 +16,18 @@ Etiam interdum sollicitudin dolor, et interdum tortor tempor tincidunt. Sed tinc
 	  <li>HTML(5)</li>
 	  <li>CSS</li>
 	  <li>Javascript</li>
-	  <li>PHP</li>
 	  <li>Linux (Debian)</li>
 	  </ul>
+	   </div>
+	  <div style="padding:0;margin:0;width:50%;float:left;">
+	  <h1>Wat wil ik nog leren?</h1>
+	  <ul>
+	  <li>PHP</li>
+	  <li>SQL</li>
+	  <li>Python</li>
+	  </ul>
 	     </div>
-
+<h1 style="clear:both">Mijn projecten:</h1>
 </div>
 	<div id="portContent" class="center" style="clear:both">
 		<div id="projects" >
