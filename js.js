@@ -163,6 +163,53 @@ function cExec() {
 			} else {
 				newLine.innerHTML = "Can't add custom websites to this page, please use 'topage' to switch to page 'makeyourown'.";
 			}
+			break;		
+			case 'contact':
+			if (location.hash == "#contact") {
+				if (consoleInput.length === 1) {
+					newLine.innerHTML = 'Usage: "contact -naam=NAAM -email=EXAMPLE@EXAMPLE.COM -bericht=VUL HIER EEN BERICHT IN" of "contact -submit"'
+				} else {
+					var contactRaw = document.getElementById('consoleInput').value;
+					var contactInput = contactRaw.split("-");
+					var contactVars = []
+					for (i = 0;i<contactInput.length;i++){
+						if (contactInput[i][(contactInput[i].length-1)] === " ") {
+							contactInput[i] = contactInput[i].slice(0,contactInput[i].length-1);
+						}
+					contactVars[i] = contactInput[i].split("=");
+					}
+					if (contactInput[1] === "submit") {
+						document.getElementById('contactsubmit').click();
+						if (document.getElementById('textinput').value === "" || document.getElementById('email').value === "") {
+							contactRaw = 'Please fill in the form before submitting';
+						}
+						
+					} else {
+					
+					for (i = 0;i<contactVars.length;i++){
+						switch (contactVars[i][0]) {
+							case 'contact':
+							
+							break;
+							case 'naam':
+								document.getElementById('textinput').value = contactVars[i][1];
+							break;
+							case 'email':
+								document.getElementById('email').value = contactVars[i][1];
+							break;
+							case 'bericht':
+								document.getElementById('message').value = contactVars[i][1];	
+							break;
+						default:
+						contactRaw = 'Unknown parameter: "' + contactVars[i][0]+'" + ' + contactRaw;
+						}
+					}
+					}
+				newLine.innerHTML = contactRaw;
+				}
+			} else {
+				toPage('contact');
+			}
 			break;
 		case 'style':
 			if (consoleInput.length === 1) {

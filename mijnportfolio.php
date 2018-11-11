@@ -1,12 +1,13 @@
 <div class="homeBlock">
 <div class="center">
    <div >
-      <h1>Wie ben ik?</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et orci id nibh mattis euismod. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam lobortis, lectus mollis cursus maximus, metus est egestas dolor, ac tristique risus nisl ac ipsum. Donec cursus condimentum dui eget iaculis. Mauris vitae hendrerit mi, vitae ornare massa. Maecenas porta eleifend nisi sed elementum. Aenean nec dolor eu dui rutrum porta. Sed vulputate ante vel turpis mattis placerat. Donec eu purus tempus, interdum eros congue, finibus ante.</p>
-      <p>
-         Proin fringilla ullamcorper diam id aliquam. Fusce sed turpis accumsan, pellentesque nisi ac, placerat justo. Ut neque eros, pellentesque a sollicitudin nec, tristique nec lorem. Vestibulum placerat auctor cursus. Sed ac lorem libero. Vestibulum pharetra, ipsum vel volutpat porttitor, nisl sapien mollis felis, et laoreet nulla tellus tristique libero. Proin non cursus lorem. Cras id elit eu odio aliquam ultrices. Pellentesque aliquam justo quis justo congue, a sollicitudin libero porta. Vestibulum efficitur, ipsum in auctor sollicitudin, risus quam eleifend mauris, in viverra sem libero vel nisi. Sed sed auctor augue, sit amet lobortis odio. Nulla facilisi. Maecenas at porta velit. Maecenas egestas facilisis placerat. Duis est nisi, mattis id convallis ut, pharetra sit amet libero. Cras mattis vel lacus vitae lacinia.
-      </p>
-   </div>
+   <div style="position:relative;margin:0;padding:0;margin-top:-10px;width:calc(100% - 13px);margin-left:5px;margin-right:8px;background-image:url('img/ik.jpg');height:230px;background-size:cover;background-position:center center;">
+        <div style="height:50px;width:100%;position:absolute;bottom:0;right:0;background-color:rgba(0,0,0,0.8)"> <h1 style="color:#FFF;;font-size:26px;position:absolute;bottom:10px;left:20px;padding:0;">Wie ben ik?</h1></div>
+</div>
+      <p style="text-align:justify;padding-top:15px;">Ik ben Hergen Dillema, een webdeveloper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum hendrerit facilisis velit eu euismod. Nam vel accumsan quam, ac tincidunt lorem. Pellentesque rhoncus semper ante, ut bibendum magna aliquet vel. Donec feugiat urna quam, at tincidunt eros egestas in. Vestibulum condimentum magna nec blandit tempor. In pharetra tortor nunc, sed suscipit purus fermentum at. Praesent ultrices felis nunc, ac dictum enim pharetra ac. Curabitur felis tellus, faucibus ac dolor lobortis, condimentum consectetur tellus.
+
+Etiam interdum sollicitudin dolor, et interdum tortor tempor tincidunt. Sed tincidunt commodo leo, vel blandit augue pharetra ac. Suspendisse ac augue fermentum, aliquet orci id, sollicitudin erat. Donec volutpat commodo semper. Sed luctus neque id elit tristique tempor. Cras velit elit, ultricies a dictum sed, placerat ornare est. In et varius mauris. Mauris sapien dolor, consequat vitae purus ut, tempor blandit nisi. Suspendisse et est lacus. Phasellus aliquet quis neque vitae malesuada. Mauris et pharetra mauris, ac efficitur nisi. </p>
+
 
       <h1>Wat kan ik?</h1>
 	  <ul>
@@ -18,47 +19,62 @@
 	  <li>PHP</li>
 	  <li>Linux (Debian)</li>
 	  </ul>
+	     </div>
+
 </div>
-	<div id="portContent" class="center">
-		<div id="projects">
+	<div id="portContent" class="center" style="clear:both">
+		<div id="projects" >
 			<!-- GRID -->
+			<a href="http://edzerdillema.nl" target="_blank">
 			<div class="siteBlok">
 				<img class="imgBlok" src="img/wed.jpg" />
 				<div class="titleBlok">
 				<h2>Website Edzer Dillema</h2>
 				</div>
 			</div>
+			</a>
+			<a href="http://dutchfeltacademy.com" target="_blank">
 			<div class="siteBlok">
 				<img class="imgBlok" src="img/wdfa.jpg" />
 				<div class="titleBlok">
 				<h2>Website DFA</h2>
 				</div>
 			</div>
+			</a>
+			<a href="http://truushuijbregts.nl" target="_blank">
 			<div class="siteBlok">
 				<img class="imgBlok" src="img/wth.jpg" />
 				<div class="titleBlok">
 				<h2>Website Truus Huijbregts</h2>
 				</div>
 			</div>
+			</a>
+			<a href="http://klassiekaanhuis.nl" target="_blank">
 			<div class="siteBlok">
 				<img class="imgBlok" src="img/wkah.jpg" />
 				<div class="titleBlok">
 				<h2>Website Klassiek aan huis</h2>
 				</div>
 			</div>
+			</a>
+			<a href="http://www.cedeo.eu" target="_blank">
 			<div class="siteBlok">
 				<img class="imgBlok" src="img/htc.jpg" />
 				<div class="titleBlok">
 				<h2>HTML/CSS Templates Cedeo</h2>
 				</div>
 			</div>
+			</a>
+			<a href="http://klassiekaanhuis.nl" target="_blank">
 			<div class="siteBlok">
 				<img class="imgBlok" src="img/wtvhl.jpg" />
 				<div class="titleBlok">
 				<h2>Website TVHL</h2>
 				</div>
 			</div>
+			</a>
 			<!-- GRID END -->
+		<div style="clear:both"></div>
 		</div>
 		</div>
    </div>
